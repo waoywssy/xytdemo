@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+    <!-- LOAD YOUR CSS FILE WHILE PAYING ATTENTION TO ITS PATH! -->
+    <link rel="stylesheet" type="text/css" href="./demos.css"/>
+    <style>
+        .ui-bar-a, 
+        .ui-bar-b,
+        span.ui-btn-inner {
+            background-color: #50C1C1;
+            color:#FFF;
+            background-image: linear-gradient( #50C1C1,#50C1C1);
+            border-radius: 0;
+            border:0;
+        }
+
+        .ui-btn-up-a {
+            border-color: #FFF;
+        }
+    </style>
+</head>    
+<body>
+    <div data-role="page">
+        <div data-role="popup" id="transitionExample" class="ui-content" data-theme="a">
+            <h3>选择你的城市</h3>
+            <div data-role="tabs">
+                <ul data-role="listview" data-inset="true" class="tablist-left">
+                  <li><a href="#one" data-ajax="false">北京</a></li>
+                  <li><a href="#two" data-ajax="false">上海</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" class="jobs-nav">
+            <div data-role="navbar" data-iconpos="right">
+                <ul>
+                    <li><a href="#transitionExample" data-transition="slideup" data-icon="arrow-d" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">杭州</a></li>
+                    <li><a href="#transitionExample" data-transition="slideup" data-icon="arrow-d" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">薪资范围</a></li>
+                    <li><a href="#transitionExample" data-transition="slideup" data-icon="arrow-d" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">更多</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">周五, 10月8日, 2010 <span class="ui-li-count">2</span></li>
+            <li><a href="index.html"><img src="./img/companylogo1.jpeg">
+            <h2>PHP工程师</h2>
+            <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+            <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+            </a></li>
+            <li><a href="index.html"><img src="./img/companylogo1.jpeg">
+            <h2>J2EE工程师</h2>
+            <p><strong>Boston Conference Planning</strong></p>
+            <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+            </a></li>
+            <li data-role="list-divider">周四, 10月7日, 2010 <span class="ui-li-count">4</span></li>
+            <li><a href="index.html">
+            <h2>架构师</h2>
+            <p><strong>Re: Dinner Tonight</strong></p>
+            <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+            </a></li>
+            <li><a href="index.html">
+            <h2>运营专员</h2>
+            <p><strong>Re: Dinner Tonight</strong></p>
+            <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+            </a></li>
+            <li><a href="index.html">
+            <h2>IOS开发</h2>
+            <p><strong>Re: Dinner Tonight</strong></p>
+            <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+            </a></li>
+            <li><a href="index.html">
+            <h2>Android开发</h2>
+            <p><strong>Re: Dinner Tonight</strong></p>
+            <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+            </a></li>
+        </ul>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="#" data-icon="grid">公司</a></li>
+                    <li><a href="#" data-icon="star" class="ui-btn-active">职位</a></li>
+                    <li><a href="#" data-icon="gear">我的</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+    </div>
+</body>
+</html>

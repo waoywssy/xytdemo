@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	
+	<!-- LOAD YOUR CSS FILE WHILE PAYING ATTENTION TO ITS PATH! -->
+	<style>
+	.ui-header {
+		height: 40px;
+	}
+	.ui-title {
+		padding-top: 0;
+	}
+	.left {
+		vertical-align: bottom;
+		float:left; 
+		clear:right;
+	}
+	.form-right {
+		vertical-align: bottom;
+		float:right; 
+		clear:right;
+	}
+	.clear {
+		clear: right;
+	}
+
+	#jobs-nav .ui-header, 
+	#jobs-nav .ui-btn {
+		background-color: #50C1C1;
+		color:#FFF;
+	}
+
+	#jobs-nav .job-title {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	#jobs-nav .job-company {
+		margin-bottom: 10px;
+	}
+
+	#jobs-nav .job-applied {
+		font-size: 14px;
+		color: #D4D0C8;
+		margin-bottom: 10px;
+	}
+
+	#jobs-nav .job-interviewed {
+		color: #D4D0C8;
+	}
+	#jobs-nav .job-operation {
+		margin-top: 20px;
+		width:60%;
+	}
+	#footer .ui-collapsible-content{
+		padding: 0;
+	}
+
+
+	.job-salary{
+		padding-left: 10px;
+		color: #DC7262;
+	}
+	.job-icon {
+		float:left;
+		clear:left;
+	}
+	.job-text, .job-company {
+		float:left;
+		height: 44px;
+		line-height: 44px;
+		padding-left: 10px;
+		padding-right: 10px;
+		clear:right;
+	}
+	.job-company {
+		padding-left: 0;
+
+	}
+	.clear{
+		clear:both;
+	}
+
+	.job-basic-info {
+		margin-bottom: 20px;
+		border-radius: 0;
+	}
+	#jobs-nav .li-title {
+		background-color: #50C1C1;
+		color:#FFF;
+		height: 44px;
+		line-height: 44px;
+	}
+	.job-date {
+		color: #D4D0C8;
+		font-size: 14px;
+		padding
+	}
+	.job-valid {
+		margin-bottom: 10px;
+	}
+	#job-desc{
+		line-height: 1.6em;
+		white-space: normal;
+		font-size: 14px;
+	}
+	.job-edu {
+		clear:none;
+	}
+
+	</style>
+</head>	
+<body>
+
+	<div data-role="page" id="jobs-nav">
+		<div data-role="header" data-position="fixed"><h1>职位详情</h1>
+			<a href="#nav-panel" data-icon="carat-l" data-iconpos="notext">返回</a>
+		</div><!-- /header -->
+
+		<ul data-role="listview" data-inset="true" class="job-basic-info">
+			<li>
+				<div class="job-title"><span><b>Java 开发工程师</b></span><span class="job-salary">10K - 20K</span></div>
+				<div class="job-published job-date"><span>发布&nbsp;&nbsp;2017-08-23</span></div>
+				<div class="job-valid job-date"><span>截止&nbsp;&nbsp;2017-08-23</span></div>
+
+				<div class="job-location"><span><span class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-notext job-icon"></span><span class="job-text">黑龙江省-鹤岗市-工农区</span></span></div>
+
+
+				<div class="job-experience"><span><span class="ui-btn ui-corner-all ui-icon-tag ui-btn-icon-notext job-icon"></span><span class="job-text">3-5年</span></span></div>
+				<div class="job-edu"><span><span class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext job-icon"></span><span class="job-text">本科</span></span></div>
+				<div class="job-type"><span><span class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext job-icon"></span><span class="job-text">全职</span></span></div>
+
+				<!--div class="job-industry"><span><span class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext job-icon"></span><span class="job-text">电力、燃气及水的生产和供应业/燃气生产和供应业</span></span></div-->
+			</li>
+			<li>
+				<div class="job-company"><span><span class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext job-icon"></span>&nbsp;&nbsp;<b>北京原创科技</b></span></div>
+				<div class="form-right">
+					<span class="ui-btn ui-corner-all ui-icon-carat-r ui-btn-icon-notext job-icon"></span>
+				</div>
+			</li>
+		</ul>
+
+		<ul data-role="listview" data-inset="true">
+			<li class="li-title">
+				<div><span><span class="ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-notext job-icon"></span>&nbsp;&nbsp;职位详情</span></div>
+			</li>
+			<li>
+				<div><h1>职位诱惑</h1></div>
+				<div class="clear"></div>
+				<div class="job-benifits"><span>公积金 五险</span></div>
+				<br />
+				<div class="job-desc" id="job-desc">
+					<h1>岗位职责</h1>
+					<div class="job-duty">1.制定并参与或协助上层执行相关的政策和制度；<br />2.负责开发客户资源，寻找潜在客户，完成销售目标；<br />3.签定销售合同，指导、协调、审核与销售服务有关的账目和记录，协调运输等事务；<br />4.解决客户就销售和服务提出的投诉；<br />
+						5.从销售和客户需求的角度，对产品的开发提供指导性建议。<br />
+					</div>
+					<br />
+					<h1>任职资格</h1>
+					<div class="job-requirements">
+						1、工科类专科及以上学历；<br />
+						2、具备市场信息分析整理能力；具备市场经验和敏感的市场观察力，分析力；<br />
+						3、独立工作能力和团队合作精神；<br />
+						4、工作细致、认真负责，具有敬业精神；<br />
+						5、具备良好的英文应用能力优先；<br />
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div data-role="footer" data-position="fixed" id="footer">
+			<div data-role="navbar"><ul><li><a href="#" class="ui-btn-active">投个简历</a></li></ul></div><!-- /navbar -->
+	    </div>
+	</div>
+	<script>
+		$(function() {
+		    console.log(1);
+		});
+	</script>
+</body>
+</html>

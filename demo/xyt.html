@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./css/nav.css"/>
+    <title>学友通 - XXX的个人账户</title>
+</head>
+<body>
+<!-- 顶部导航 -->
+<div class="navbar navbar-inverse" id="navbar">
+    <!--div class="navbar navbar-inverse navbar-fixed-top"-->
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand hidden-sm" href="stu_homePage.html" onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'navbar-首页'])">首页</a>
+      </div>
+      <div class="navbar-collapse collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li class="hidden-sm hidden-md"><a href="#"  target="_blank" onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'v2doc'])">应聘信息</a></li>
+          <li><a href="stu_personnal_account.html" target="_blank" onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'v3doc'])">个人账户</a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+
+<!--  主体内容 -->
+<!-- 信息编辑/预览模块 -->
+<div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+          <!--button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+          </button-->
+            <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2"></div>
+                        <section id="sctBasInfoEdi">
+                            <!-- 基本信息 编辑 -->
+                            <!-- 简历照片上传 -->
+                            <div class="info_edit basic_info profile_pic_settings" id="basInfoEdi">
+                                <img class="img-thumbnail" src="./img/profile_pic.png" alt="简历照片" id="stuPhoneEdi"/>
+                                <a class="profile_pic_change" data-toggle="tooltip"
+                                   data-placement="right" title="点击上传简历照片">修改</a>
+                                <div class="picUpload">
+                                    <div class="th">
+                                        <span>上传照片</span> <a></a>
+                                    </div>
+                                    <div class="tb">
+                                        <form enctype="multipart/form-data" method="post" onsubmit="return false;" id="stuformforUpload">
+                                            <input type="file" id="stufileElem" name="filephoto" onchange="previewImage(this)">
+                                            <div id="filePic" class="img-thumbnail">
+                                                <img id="imghead" src=''>
+                                            </div>
+                                            <div class="submitBox">
+                                                <input type="submit" value="保存" id="onsubmitPhoto">
+                                                <input type="button" value="取消">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+<br /><br />
+                            <!-- 基本信息填写 -->
+                            <div class="editBox">
+                                <form class="form-horizontal" role="form" name="basInfoForm">
+                                    <div class="form-group">
+                                        <label for="stuNumEdi"  class="col-sm-2 control-label" ><span
+                                            class="key_mark">*</span>学号</label>
+                                        <!--div class="col-sm-10 fixed_info" id="stuNumEdi">123456</div-->
+                                        <input type="text" class="form-control essential col-sm-10" id="stuNumEdi" placeholder="请输入学号" name="stuNumEdi">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="stuNameEdi" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>姓名</label>
+                                        <!--div class="col-sm-10 fixed_info" id="stuNameEdi">赵哈哈</div-->
+                                        <input type="text" class="form-control essentiali col-sm-10" id="stuNameEdi" placeholder="请输入姓名" name="stuNameEdi">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="stuHeightEdi" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>身高</label>
+                                            <input type="text" class="form-control essential" id="stuHeightEdi"
+                                                   placeholder="请输入身高"
+                                                   onkeyup="value=value.replace(/[^\d]/g,'') "
+                                                   onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+                                            >
+                                        <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请重新输入合法的身高(单位cm)</div>
+                                        <!--div class="alert alert-danger col-sm-10" id="stuHeightEdispan2" role="alert">请输入身高(单位cm)</div-->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="idNum" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>身份证号</label>
+                                        <input type="text" class="form-control essential" id="stuIdcardEdi" placeholder="请输入证件号码" name="idNum">
+                                        <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请输入身份证证件号码</div>
+                                        <!--div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">您输入的身份证号有误</div-->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>学院系/专业班级</label> 
+                                        <select class="form-control info_year" id="stumajorEdi1"></select>
+                                        <select class="form-control info_year" id="stumajorEdi2"></select>
+                                        <select class="form-control info_year" id="stumajorEdi3"></select>
+                                        <select class="form-control info_year" id="stumajorEdi4"></select>
+                                        
+                                        <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请选择至所属班级</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>入校日期</label>
+                                        <p id="stuEnrolled">
+                                            <select name="stuenrolledYear" class="info_year form-control" id="stuEnrolledyearEdi"></select>
+                                            <select name="stuenrolledMonth" class="info_month form-control" id="stuEnrolledmonthEdi"></select>
+                                            <select name="stuenrolledDay" class="info_date form-control" id="stuEnrolleddayEdi"></select>
+                                        </p>
+                                        <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请输入完整的入校时间</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>生源地</label>
+                                        <div class="form-inline">
+                                            <div class="distpicker5" id="stuoriginPlace">
+                                                <select class="form-control location-slt" id="stuprovince10"></select>
+                                                <select class="form-control location-slt" id="stucity10"></select>
+                                                <select class="form-control location-slt" id="studistrict10"></select>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请输入完整的生源地</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="stunationEdi" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>民族</label>
+                                        <input type="text" class="form-control essential" id="stunationEdi" placeholder="请输入民族">
+                                        <!--div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">输入格式有误</div-->
+                                        <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请输入所属民族</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobilePhEdi" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>联系电话</label>
+                                        <input type="text" class="form-control essential" id="stumobilePh"
+                                                   placeholder="请输入常用电话号，可写两个用逗号或分号隔开" name="mobilePhEdi">
+                                        <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请输入联系电话</div>
+                                        <!--div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">请输入正确格式的联系电话</div-->
+                                        <!--div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">输入两个联系电话用逗号（，）或者分号（；）隔开</div-->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 control-label"><span
+                                            class="key_mark">*</span>是否在职</label>
+                                        <div>
+                                            <label class="checkbox-inline"> 
+                                                <input type="radio" name="stuEmployment" value="1" checked>是&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="stuEmployment" value="0">否
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- 展开更多 -->
+                                    <div class="form-group">
+                                        <!-- 展开更多（基本信息） -->
+                                        <div class="panel-group" id="accordion">
+                                            <div class="panel panel-warning">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                                            < 展开更多
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseFour" class="panel-collapse collapse">
+                                                    <div class="panel-body">
+                                                        <form class="form-horizontal more_basic_info" id="" role="form">
+                                                            <div class="form-group">
+                                                                <label for="stuqqEdi" class="col-sm-2 control-label">QQ号</label>
+                                                                    <input type="text" class="form-control essential" id="stuqqEdi"
+                                                                           placeholder="请输入常用的QQ号" name="stuqq"
+                                                                           onkeyup="value=value.replace(/[^\d]/g,'') "
+                                                                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="stuwechat" class="col-sm-2 control-label">微信号</label><span
+                                                                    class="key_mark">　</span>
+                                                                <input type="text" class="form-control essential" id="stuWechatEdi" placeholder="请输入常用的微信号" name="stuwechat" id="stuwechat">
+                                                                <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">您输入的微信格式有误</div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="" class="col-sm-2 control-label">电子邮箱</label><span class="key_mark">　</span>
+                                                                    <input type="text" class="form-control essential" id="stuEmailEdi" placeholder="请输入常用的邮箱" name="email">
+                                                                <div class="alert alert-danger col-sm-10" id="stuHeightEdispan1" role="alert">输入正确的邮箱格式</div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="" class="col-sm-2 control-label">现居住地</label><span
+                                                                    class="key_mark">　</span>
+                                                                    <input type="text" class="form-control essential addressEdit" id="stuaddressEdit"
+                                                                           placeholder="请输入现居住地址" name="stuaddressEdit">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 保存、取消 按钮 -->
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default" id="basSaveBtn" onclick="updatebaseInfo()">保存</button>
+                                            <button type="" class="btn btn-default resetBtn" id="basCancleBtn">取消</button>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </form>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                            <!-- 基本信息预览 -->
+                            <div class="info_preview click_to_ed" id="cliToEdi">
+                                <span>点此编辑</span>
+                                <div class="editBtn"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="pre_head">
+                                <!-- 照片 -->
+                                <div class="profile_pic_settings">
+                                    <img class="img-thumbnail" src="../img/profile_pic.png" alt="简历照片" id="stuShowPhone"/>
+                                </div>
+                                <!-- 信息预览 -->
+                                <ul class="list-unstyled">
+                                    <li ><label class="pre_label">学号</label>：<span
+                                            class="fixed_info" id="stuNumberpreview"></span></li>
+                                    <li><label class="pre_label">姓名</label>：<span
+                                            class="fixed_info" id="stuNamepreview"></span></li>
+                                    <li><label class="pre_label">学院/系</label>： <span id="stuCollogepreview"></span></li>
+                                    <li><label class="pre_label">专业/班级</label>： <span id="stuMajorpreview"></span></li>
+                                    <li id="stuenrolledYearLi"><label class="pre_label">入校日期</label>： <span id="stuenrolledYearpreview"></span>
+                                        <span id="stuenrolledMonthpreview"></span><span id="stuenrolledDaypreview"></span></li>
+                                    <li style='display:none' id="stuCostDpLi"><label class="pre_label">辅修专业</label>： <span id="stuCostDp"></span></li>
+                                    <li  id="stuGenderLi"><label class="pre_label">性别</label>： <span id="stuGenderpreview"></span></li>
+                                    <li  id="stuHeightLi"><label class="pre_label">身高</label>： <span id="stuHeightpreview"></span></li>
+                                    <li  id="stuDobYearLi"><label class="pre_label">出生日期</label>： <span id="stuDobYearpreview"></span>
+                                        <span id="stuDobMonthpreview"></span><span id="stuDobDaypreview"></span></li>
+                                    <li  id="stuLocIdLi"><label class="pre_label">生源地</label>： <span id="stuLocIdpreview"></span> <span></span>
+                                        <span></span></li>
+                                    <li  id="stuNationLi"><label class="pre_label">民族</label>： <span id="stuNationpreview"></span></li>
+                                    <li  id="stuMobphoneLi"><label class="pre_label">联系电话</label>： <span id="stuMobphonepreview"></span></li>
+                                    <li  id="stuEmployment"><label class="pre_label">是否在职</label>： <span id="stuEmploymentpreview"></span></li>
+                                    <li  id="stuNowadderssLi" style='display:none'><label class="pre_label">现居住地</label>： <span id="stuNowaddersspreview"></span></li>
+                                    <li  id="stuIdcardLi"><label class="pre_label">身份证</label>： <span id="stuIdcardpreview"></span></li>
+                                    <li id="stuQqLi" style='display:none'><label class="pre_label">QQ号</label>： <span id="stuQqpreview"></span></li>
+                                    <li id="stuWechatLi" style='display:none'><label class="pre_label">微信号</label>： <span id="stuWechatpreview"></span></li>
+                                    <li id="stuEmailLi" style='display:none'><label class="pre_label">电子邮箱</label>： <span id="stuEmailpreview"></span></li>
+                                </ul>
+                                <div class="clear"></div>
+                            </div>
+                        </section>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    <!-- /#wrapper -->
+</div>
+
+<!-- Java Script 引用 -->
+<script src="./js/jquery@2.2.4.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+</body>
+</html>

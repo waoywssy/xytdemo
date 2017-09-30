@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	
+	<!-- LOAD YOUR CSS FILE WHILE PAYING ATTENTION TO ITS PATH! -->
+	<style>
+	.ui-header {
+		height: 40px;
+	}
+	.ui-title {
+		padding-top: 0;
+	}
+	.left {
+		vertical-align: bottom;
+		float:left; 
+		clear:right;
+	}
+	.form-right {
+		vertical-align: bottom;
+		float:right; 
+		clear:right;
+	}
+	.clear {
+		clear: right;
+	}
+
+	#companies-nav .ui-header {
+		background-color: #50C1C1;
+		color:#FFF;
+	}
+
+	#companies-nav .company-title {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	#companies-nav .company-company {
+		margin-bottom: 10px;
+	}
+
+	#companies-nav .company-applied {
+		font-size: 14px;
+		color: #D4D0C8;
+		margin-bottom: 10px;
+	}
+
+	#companies-nav .company-interviewed {
+		color: #D4D0C8;
+	}
+	#companies-nav .company-operation {
+		margin-top: 20px;
+		width:60%;
+	}
+	#footer .ui-collapsible-content{
+		padding: 0;
+	}
+
+
+	.company-salary {
+		padding-left: 10px;
+		color: #DC7262;
+	}
+	.company-icon {
+		float:left;
+		clear:left;
+	}
+
+	.company-text, .company-company {
+		float:left;
+		height: 44px;
+		line-height: 44px;
+		padding-left: 10px;
+		padding-right: 10px;
+		clear:right;
+	}
+
+	.company-company {
+		padding-left: 0;
+	}
+
+	.clear {
+		clear:both;
+	}
+
+	.company-basic-info {
+		margin-bottom: 20px;
+		border-radius: 0;
+	}
+	#companies-nav .li-title {
+		background-color: #50C1C1;
+		color:#FFF;
+		height: 44px;
+		line-height: 44px;
+	}
+	.company-date {
+		color: #D4D0C8;
+		font-size: 14px;
+		padding
+	}
+	.company-valid {
+		margin-bottom: 10px;
+	}
+
+	#company-desc {
+		line-height: 1.6em;
+		white-space: normal;
+		font-size: 14px;
+	}
+	.company-edu {
+		clear:none;
+	}
+	#companies-nav a.ui-btn-active {
+		background-color: #50C1C1;
+		border-color: #50C1C1;
+	}
+
+
+	#jobs-nav .job-title {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	#jobs-nav .job-company {
+		margin-bottom: 10px;
+	}
+
+	#jobs-nav .job-applied {
+		font-size: 14px;
+		color: #D4D0C8;
+		margin-bottom: 10px;
+	}
+
+	#jobs-nav .job-interviewed {
+		color: #D4D0C8;
+	}
+	#jobs-nav .job-operation {
+		margin-top: 20px;
+		width:60%;
+	}
+	#footer .ui-collapsible-content{
+		padding: 0;
+	}
+	.job-salary{
+		padding-left: 10px;
+		color: #DC7262;
+	}
+	.company-contact span {
+		display: block;
+		float:left;
+		margin-right: 20px;
+	}
+	.company-basic-info li div {
+		margin-bottom: 10px;
+	}
+
+	.logo {
+		display: block;
+		float: left;
+		margin: 15px 15px 15px 15px;
+	}
+	.logo img {
+		width: 60px;
+		height: 60px;
+	}
+
+	#companies-nav .ui-header, 
+	#companies-nav .ui-btn {
+		background-color: #50C1C1;
+		color:#FFF;
+	}
+
+	.tag {
+		width: 32px;
+	}
+	</style>
+</head>	
+<body>
+	<div data-role="page" id="companies-nav">
+		<div data-role="header" data-position="fixed"><h1>公司详情</h1>
+			<a href="#nav-panel" data-icon="carat-l" data-iconpos="notext">返回</a>
+		</div><!-- /header -->
+
+		<ul data-role="listview" data-inset="true" class="company-basic-info">
+			<li>
+				<div class="logo">
+					<a><img src="img/companylogo1.jpeg" /></a>
+				</div>
+				<div>
+					<h1>北京原创科技</h1>
+					<div class="company-location company-date"><span>91530381MA6KWF8W4G</span></div>
+					<div class="company-location"><span>山西省-吕梁市</span></div>
+					<div class="company-location company-date"><span>成立日 2008-01-13 </span></div>
+					<div class="company-info company-date"><span>金融, 移动互联网/注册资本1亿美元/15-2000人</span></div>
+				</div>
+			</li>
+		</ul>
+
+		<div data-role="tabs" id="tabs">
+			<div data-role="navbar">
+				<ul><li><a href="#one">公司介绍</a></li><li><a href="#two">联系方式</a></li><li><a href="#three">招聘职位(5)</a></li></ul>
+			</div>
+			<div id="one" class="ui-body-d ui-content">
+				<div class="company-desc" id="company-desc"><div class="company-duty">北京高控科技有限公司是一家经验丰富的专注于全球知名自动化工控产品销售、技术服务的公司，拥有资深的销售工程师、应用工程师、技术工程师组成的强大的服务与支持团队。为客户提供由控制→驱动→执行→反馈 一体式的解决方案，本公司全体员工均从业5年以上，拥有资深的行业经验，为客户提供完美的解决方案，具备国际化视野的专业精密运动控制产品供应商和系统集成商。主要经营运动控制系统、交流伺服电机、步进电机及驱动器、减速箱、丝杆、传感器、机器人系统。
+经过多年的运营发展，公司与全国各大研究院所、军工企业、高校建立了良好的合作关系，并在在机床制造、半导体、航空航天、高精密控制、特殊定制加工等领域积累了丰富的解决方案及众多的产品渠道。
+作为全球多个知名运动控制品牌的分销商，公司始终以“源自全球，服务中国”为己任，成功的将众多国际领先的运动控制产品引入中国市场，并即将在北美及欧洲设立两个专业的全球采购中心。
+未来，公司将继续坚持“以客户需求为第一导向，服务客户，满足客户”的经营理念，并致力于成为涵盖运动控制产品销售与制造、应用软件服务以及供应链服务于一体的工业自动化综合服务企业。希望公司以本土化的经营策略，国际化的经营理念，及专业化的服务态度成为您事业迈向成功的忠实伙伴。</div></div>
+			</div>
+			<div id="two">
+		    	<ul class="company-contact" data-role="listview" data-inset="true" id="jobs-nav">
+					<li><span class="tag">电话</span><span>13455558888</span></li>
+					<li><span class="tag">邮箱</span><span>xin@xin.com</span></li>
+					<li><span class="tag">QQ</span><span>888888</span></li>
+					<li><span class="tag">网址</span><span>http://www.yctec.com</span></li>
+					<li><span class="tag">微信</span><span>yuanchuang_tec</span></li>
+			    </ul>
+			</div>
+			<div id="three">
+			    <ul data-role="listview" data-inset="true" id="jobs-nav">
+					<li>
+						<div class="left">
+							<div class="job-title"><span><b>Java 开发工程师</b></span><span class="job-salary">10K - 20K</span></div>
+							<div class="job-company"><span>山西省-吕梁市-离石区 [吕梁市]</span></div>
+							<div class="job-applied"><span>6年以下 / 高中/中专及以上 / 全职</span></div>
+							<div class="job-interviewed"><span>面试&nbsp;&nbsp;2017-08-23</span></div>
+						</div>
+					</li>
+					<li>
+						<div class="left">
+							<div class="job-title"><span><b>Java 开发工程师</b></span><span class="job-salary">10K - 20K</span></div>
+							<div class="job-company"><span>山西省-吕梁市-离石区 [吕梁市]</span></div>
+							<div class="job-applied"><span>6年以下 / 高中/中专及以上 / 全职</span></div>
+							<div class="job-interviewed"><span>面试&nbsp;&nbsp;2017-08-23</span></div>
+						</div>
+					</li>
+			    </ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function() {
+		    console.log(1);
+		});
+	</script>
+</body>
+</html>

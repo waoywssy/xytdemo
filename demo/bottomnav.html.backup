@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+    <!-- LOAD YOUR CSS FILE WHILE PAYING ATTENTION TO ITS PATH! -->
+    <link rel="stylesheet" type="text/css" href="./css/mycss.css"/>
+</head>    
+<body>
+    <div data-role="page">     
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="bottomnav.html#one" data-icon="custom">t职位</a></li>
+                    <li><a href="bottomnav.html#two" data-icon="custom">t公司</a></li>
+                    <li><a href="bottomnav.html#three" data-icon="custom">t我的</a></li>
+                </ul>
+            </div><!-- /navbar -->                             
+        </div>  
+
+        <div id="one" name="one" data-role="content">
+            <h1 >职位</h1>
+            <div>Steven Hoober in his research of mobile devices usage, found that 49% of people rely on a one thumb to get things done on their phones. In figure below, the diagram that appears on the mobile phones’ screens are approximate reach charts, in which the colors indicate what areas a user can reach with the thumb to interact with the screen. Green indicates the area a user can reach easily; yellow, an area that requires a stretch; and red, an area that requires users to shift the way in which they’re holding a device. </div>
+            <div>Steven Hoober in his research of mobile devices usage, found that 49% of people rely on a one thumb to get things done on their phones. In figure below, the diagram that appears on the mobile phones’ screens are approximate reach charts, in which the colors indicate what areas a user can reach with the thumb to interact with the screen. Green indicates the area a user can reach easily; yellow, an area that requires a stretch; and red, an area that requires users to shift the way in which they’re holding a device. </div>
+        </div>
+
+        <div id="one" name="two" data-role="content">
+            <h1 >公司</h1>
+            <div>Steven Hoober in his research of mobile devices usage, found that 49% of people rely on a one thumb to get things done on their phones. In figure below, the diagram that appears on the mobile phones’ screens are approximate reach charts, in which the colors indicate what areas a user can reach with the thumb to interact with the screen. Green indicates the area a user can reach easily; yellow, an area that requires a stretch; and red, an area that requires users to shift the way in which they’re holding a device. </div>
+            <div>Steven Hoober in his research of mobile devices usage, found that 49% of people rely on a one thumb to get things done on their phones. In figure below, the diagram that appears on the mobile phones’ screens are approximate reach charts, in which the colors indicate what areas a user can reach with the thumb to interact with the screen. Green indicates the area a user can reach easily; yellow, an area that requires a stretch; and red, an area that requires users to shift the way in which they’re holding a device. </div>
+        </div>
+
+        <div id="one" name="three" data-role="content">
+            <h1 >我的</h1>
+            <div>Steven Hoober in his research of mobile devices usage, found that 49% of people rely on a one thumb to get things done on their phones. In figure below, the diagram that appears on the mobile phones’ screens are approximate reach charts, in which the colors indicate what areas a user can reach with the thumb to interact with the screen. Green indicates the area a user can reach easily; yellow, an area that requires a stretch; and red, an area that requires users to shift the way in which they’re holding a device. </div>
+            <div>Steven Hoober in his research of mobile devices usage, found that 49% of people rely on a one thumb to get things done on their phones. In figure below, the diagram that appears on the mobile phones’ screens are approximate reach charts, in which the colors indicate what areas a user can reach with the thumb to interact with the screen. Green indicates the area a user can reach easily; yellow, an area that requires a stretch; and red, an area that requires users to shift the way in which they’re holding a device. </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <div data-role="navbar">
+                <ul>
+                    <!--li><a href="#one" data-icon="custom">职位</a></li-->
+                <li>
+                    <a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn">职位</a>
+                    <div data-role="popup" id="popupMenu" data-theme="b">
+                            <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                                <li data-role="list-divider">Choose an action</li>
+                                <li><a href="#">View details</a></li>
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Disable</a></li>
+                                <li><a href="#">Delete</a></li>
+                            </ul>
+                    </div>
+                </li>
+                    <li><a href="#two" data-icon="custom">公司</a></li>
+                    <li><a href="#three" data-icon="custom">我的</a></li>
+                </ul>
+            </div><!-- /navbar -->                             
+        </div> 
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+var cmptyp_a=[];
+cmptyp_a['1']='政府机关';
+cmptyp_a['2']='事业单位';
+cmptyp_a['3']='国企';
+cmptyp_a['4']='外资';
+cmptyp_a['5']='合资';
+cmptyp_a['6']='私企';
+cmptyp_a['7']='社会团体';
+cmptyp_a['8']='个人';

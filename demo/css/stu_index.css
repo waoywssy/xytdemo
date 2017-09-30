@@ -1,0 +1,89 @@
+.ui-header {
+	height: 40px;
+}
+.ui-title {
+	padding-top: 0;
+}
+
+li.ui-li-static {
+	padding-left: 5px;
+	padding-right: 5px;
+	text-overflow: ellipsis;
+}
+.left {
+	float:left; 
+	clear:left;
+}
+.right {
+	float:right; 
+	clear:right;
+}
+.clear {
+	clear: both;
+}
+
+#jobs-nav .ui-header, 
+#jobs-nav .ui-btn {
+	background-color: #50C1C1;
+	color:#FFF;
+}
+
+#jobs-nav .job-title {
+	font-size: 18px;
+	margin-bottom: 0;
+	width:60%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#jobs-nav .job-title h4 {
+	margin-top: 0;
+}
+
+#jobs-nav .job-interviewed {
+	color: #D4D0C8;
+}
+	
+#jobs-nav .job-company {
+	text-align:left;
+	margin-bottom: 3px;
+	width:100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#jobs-nav .job-applied {
+	font-size: 14px;
+	color: #D4D0C8;
+	margin-top: 5px;
+}
+
+#jobs-nav .job-salary span{
+	color: #fc703e;
+}
+
+#jobs-nav .job-operation {
+	margin-top: 20px;
+}
+#footer .ui-collapsible-content{
+	padding: 0;
+}
+
+#jobpanel, 
+#jobfairpanel {
+	padding: 0; 
+}
+
+#jobpanel ul, 
+#jobfairpanel ul{
+	margin-top: 0;
+}
+
+#jobs-nav .ui-tabs {
+	padding: 0;
+}
+
+
+/* 将Scroll插件置于tab内部*/
+#jobpanel ._v-container {
+	position: relative;
+}

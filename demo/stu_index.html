@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/stu_index.css" />
+	<!--script src="https://unpkg.com/vue"></script-->
+	<!--script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.4"></script-->
+	<script src="js/distpickerjs/distpicker.data.js"></script>
+	<script src="js/constant/ind.js"></script>
+	<script src="js/constant/edu_arr.js"></script>
+	<script src="js/constant/cmptyp_arr.js"></script>
+	<script src="js/constant/funtype_arr.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/vue-resource@1.3.4.js"></script>
+	<script src="js/vue-scroller.min.js"></script>
+	
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/stu_index.js"></script>
+
+</head>	
+<body>
+	<div data-role="page" id="jobs-nav">
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+			      <li><a href="#jobpanel">职位</a></li>
+			      <li><a href="#jobfairpanel"  data-theme="a" data-ajax="false">招聘会</a></li>
+			    </ul>
+			</div>
+			<div id="joblist">
+				<div id="jobpanel" class="ui-content">
+					<scroller
+					  :on-refresh="refresh"
+					  :on-infinite="infinite">
+
+						<ul data-role="listview" data-inset="true" class="joblist">
+							<li v-for="job in jobs">
+								<div>
+									<div class="job-title left"><h4>{{ job.JobListName }}</h4></div>
+									<div class="job-interviewed right"><span>{{ handlePostDate(job.JobListPostTime, 1) }}</span></div>	
+								</div>
+								<div class="job-company left"><span>{{ job.EnterInfoName }}</span></div>
+								<div class="job-salary right"><span>{{ handleSalary(job.JobListSalaryLow, job.JobListSalaryHigh) }}</span></div>
+								<div class="job-applied left"><span>{{ handleLocation(job.JobListLocationId) }}</span></div>
+								<div class="job-applied left">
+									<span>
+										<span v-if="job.JobListExperience > 0">{{ job.JobListExperience }} 年 / </span>
+										<span>{{ handleEducationType(job.JobListEduId) }} / </span>
+										<span>需{{ job.JobListPersons }}人</span>
+									</span>
+								</div>
+								<!--div><span>{{ handleIndustry(job.EnterInfoIndId1) }}</span></div-->
+								<!--div><span>{{ job.EnterInfoScaleId }} 人</span></div-->
+						    </li>
+						</ul>
+					</scroller>
+				</div>
+				<div id="jobfairpanel" class="ui-content">
+					<ul data-role="listview" data-inset="true" class="joblist">
+				    	<li v-for="jobfair in jobfairs">
+				    		<div>
+								<div class="job-title left"><h4>{{ jobfair.enterName }}</h4></div>
+								<div class="job-interviewed right"><span>{{ handleCompanyType(jobfair.enterType) }}</span></div>
+							</div>
+							<div class="job-company"><span>{{ jobfair.JobFairMajor }}</span></div>
+							<div class="job-company"><span>{{ jobfair.JobFairLocation }}</span></div>
+							<div class="job-company"><span>{{ handlePostDate(jobfair.JobFairSTime, 0) }}</span></div>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

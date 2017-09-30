@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://v4.bootcss.com/favicon.ico">
+    <title>学友通</title>
+    <!-- Bootstrap core CSS -->
+    <link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.bootcss.com/p/bootstrap-switch/static/stylesheets/bootstrapSwitch.css" rel="stylesheet">
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://www.bootcss.com/p/bootstrap-switch/static/js/bootstrapSwitch.js"></script>
+    <script src="js/constant/ugrp.js"></script>
+    <script src="js/constant/ugrp_func.js"></script>  	
+  	<style>
+
+
+
+		/* General CSS Setup */
+		body{
+		  background-color: lightblue;
+		  font-family: "Ubuntu-Italic", "Lucida Sans", helvetica, sans;
+		}
+
+		/* container */
+		.container {
+		  padding: 5% 5%;
+		}
+
+		/* CSS talk bubble */
+		.talk-bubble {
+			margin: 5px;
+			display: inline-block;
+			position: relative;
+			width: auto;
+			max-width: 480px;
+			min-width: 80px;
+			height: auto;
+			background-color: lightyellow;
+		}
+
+		.border{
+		  	border: 8px solid #666;
+		}
+
+		.round{
+			border-radius: 10px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+		}
+
+		/* Right triangle placed top left flush. */
+		.tri-right.border.left-top:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: -40px;
+			right: auto;
+		  	top: -8px;
+			bottom: auto;
+			border: 32px solid;
+			border-color: #666 transparent transparent transparent;
+		}
+		.tri-right.left-top:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: -20px;
+			right: auto;
+		  	top: 0px;
+			bottom: auto;
+			border: 22px solid;
+			border-color: lightyellow transparent transparent transparent;
+		}
+
+		/* Right triangle, left side slightly down */
+		.tri-right.border.left-in:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: -40px;
+			right: auto;
+		  	top: 30px;
+			bottom: auto;
+			border: 20px solid;
+			border-color: #666 #666 transparent transparent;
+		}
+		.tri-right.left-in:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: -20px;
+			right: auto;
+		  	top: 38px;
+			bottom: auto;
+			border: 12px solid;
+			border-color: lightyellow lightyellow transparent transparent;
+		}
+
+		/*Right triangle, placed bottom left side slightly in*/
+		.tri-right.border.btm-left:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: -8px;
+		  	right: auto;
+		  	top: auto;
+			bottom: -40px;
+			border: 32px solid;
+			border-color: transparent transparent transparent #666;
+		}
+		.tri-right.btm-left:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: 0px;
+		  	right: auto;
+		  	top: auto;
+			bottom: -20px;
+			border: 22px solid;
+			border-color: transparent transparent transparent lightyellow;
+		}
+
+		/*Right triangle, placed bottom left side slightly in*/
+		.tri-right.border.btm-left-in:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: 30px;
+		  	right: auto;
+		  	top: auto;
+			bottom: -40px;
+			border: 20px solid;
+			border-color: #666 transparent transparent #666;
+		}
+		.tri-right.btm-left-in:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+			left: 38px;
+		  	right: auto;
+		  	top: auto;
+			bottom: -20px;
+			border: 12px solid;
+			border-color: lightyellow transparent transparent lightyellow;
+		}
+
+		/*Right triangle, placed bottom right side slightly in*/
+		.tri-right.border.btm-right-in:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: 30px;
+			bottom: -40px;
+			border: 20px solid;
+			border-color: #666 #666 transparent transparent;
+		}
+		.tri-right.btm-right-in:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: 38px;
+			bottom: -20px;
+			border: 12px solid;
+			border-color: lightyellow lightyellow transparent transparent;
+		}
+		/*
+			left: -8px;
+		  	right: auto;
+		  	top: auto;
+			bottom: -40px;
+			border: 32px solid;
+			border-color: transparent transparent transparent #666;
+			left: 0px;
+		  	right: auto;
+		  	top: auto;
+			bottom: -20px;
+			border: 22px solid;
+			border-color: transparent transparent transparent lightyellow;
+
+		/*Right triangle, placed bottom right side slightly in*/
+		.tri-right.border.btm-right:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: -8px;
+			bottom: -40px;
+			border: 20px solid;
+			border-color: #666 #666 transparent transparent;
+		}
+		.tri-right.btm-right:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: 0px;
+			bottom: -20px;
+			border: 12px solid;
+			border-color: lightyellow lightyellow transparent transparent;
+		}
+
+		/* Right triangle, right side slightly down*/
+		.tri-right.border.right-in:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: -40px;
+		  	top: 30px;
+			bottom: auto;
+			border: 20px solid;
+			border-color: #666 transparent transparent #666;
+		}
+		.tri-right.right-in:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: -20px;
+		  	top: 38px;
+			bottom: auto;
+			border: 12px solid;
+			border-color: lightyellow transparent transparent lightyellow;
+		}
+
+		/* Right triangle placed top right flush. */
+		.tri-right.border.right-top:before {
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: -40px;
+		  	top: -8px;
+			bottom: auto;
+			border: 32px solid;
+			border-color: #666 transparent transparent transparent;
+		}
+		.tri-right.right-top:after{
+			content: ' ';
+			position: absolute;
+			width: 0;
+			height: 0;
+		  	left: auto;
+			right: -20px;
+		  	top: 0px;
+			bottom: auto;
+			border: 20px solid;
+			border-color: lightyellow transparent transparent transparent;
+		}
+
+		/* talk bubble contents */
+		.talktext{
+		  padding: 0.6em;
+		  text-align: left;
+		  line-height: 1.5em;
+		}
+
+		.talktext p{
+		  /* remove webkit p margins */
+		  -webkit-margin-before: 0em;
+		  -webkit-margin-after: 0em;
+		}
+
+
+	  	textarea {
+	  		max-width: 568px;
+	  		min-width: 58px;
+	  	}
+	  	.switch,
+	  	.notice-target {
+	  		margin: 10px 10px 10px 0;
+	  		float:left;
+	  	}
+	  	.form-control {
+	  		height: 30px;
+	  	}
+	  	.hide {
+	  		display: none;
+	  	}
+		.clear {
+			clear: both;
+		}
+		.right-floated {
+			float: right;
+		}
+		.avata-left {
+			width: 30px;
+			height: 30px;
+			background-image: url("./img/avata-company.jpg");
+			display:block;
+			float:left;
+			margin-right: 15px;
+			margin-top: 5px;
+		}
+		.avata-right {
+			width: 30px;
+			height: 30px;
+			background-image: url("./img/avata.jpg");
+			display:block;
+			float:right;
+			margin-left: 15px;
+			margin-top: 5px;
+		}
+
+		#myModal1 .modal-body {
+			background-color: #f0f0f0;
+			max-height: calc(100vh - 210px);
+			overflow: auto;
+			height: 500px;
+		}
+
+		.unit {
+			display: block;
+			float: left;
+			margin-bottom: 10px;
+			margin-right: 20px;
+		}
+		.cost select {
+			height: 30px;
+		}
+
+  	</style>
+  </head>
+  <body>
+		<!-- 老师发送通知中心 -->
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		  通知中心
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">发送通知</h4>
+		      </div>
+		      <div class="modal-body">
+				<div>
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-tabs nav-pills" role="tablist">
+				    <li role="presentation" class="active"><a href="#company" aria-controls="company" role="tab" data-toggle="tab">企业通知</a></li>
+				    <li role="presentation"><a href="#student" aria-controls="student" role="tab" data-toggle="tab">学生通知</a></li>
+				  </ul>
+
+				  <!-- Tab panes -->
+				  <div class="tab-content">
+				    <div role="tabpanel" class="tab-pane active" id="company">
+				    	<!-- 企业通知面板 -->
+			    		<div class="switch" data-on-label="群发" data-off-label="单发" id="switch-c">
+						    <input type="checkbox" checked />
+						</div>
+
+					    <div class="input-group notice-target" id="cmp-input">
+							<input type="text" class="form-control" placeholder="企业名称" aria-describedby="basic-addon1" id="cmp-input-val">
+							<div class="alert alert-danger" role="alert" id="cmp-input-err">请填写正确的企业名称</div>
+						</div>
+
+					    <textarea class="form-control" rows="5"></textarea>
+				    </div>
+				    <div role="tabpanel" class="tab-pane" id="student">
+				    	<!-- 学生通知面板 -->
+				    	<div class="switch" data-on-label="群发" data-off-label="单发" id="switch-s">
+						    <input type="checkbox" checked />
+						</div>
+
+					    <div class="input-group notice-target" id="std-input">
+							<input type="text" class="form-control" placeholder="学生学号" aria-describedby="basic-addon1" id="std-input-val">
+							<div class="alert alert-danger" role="alert" id="std-input-err">请填写正确的学生学号</div>
+						</div>
+						<div class="clear"></div>
+						<div class="cost"><h5>群发单位</h5><br />
+							<div class="unit"><select name="select-h-2a" id="stumajorEdi1"><option value="0" selected="">-请选择所在学院-</option></select></div>
+							<div class="unit"><select name="select-h-2b" id="stumajorEdi2"></select></div><div class="clear"></div>
+							<div class="unit"><select name="select-h-2c" id="stumajorEdi3"></select></div>
+							<div class="unit"><select name="select-h-2c" id="stumajorEdi4"></select></div>
+						</div>
+					    <textarea class="form-control" rows="5"></textarea>
+				    </div>
+
+				    <div class="alert alert-danger hide" role="alert">通知内容不能为空</div>
+				  </div>
+				</div>
+		      </div>
+
+
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+		        <button type="button" class="btn btn-primary">发送</button>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+
+
+		<!-- 公司与学生发送短信 -->
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">
+		  发站内信
+		</button>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">发站内信</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<div class="modal-body-content">
+					<div class="avata-right"></div>
+					<div class="talk-bubble tri-right right-top right-floated">
+					  <div class="talktext">
+					    <p>您好，请问该职位有哪些具体需求？</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-left"></div>
+					<div class="talk-bubble tri-right left-top">
+					  <div class="talktext">
+					    <p>具体职位你可以参考职位详情</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-right"></div>
+					<div class="talk-bubble tri-right right-top right-floated">
+					  <div class="talktext">
+					    <p>您好，请问该职位有哪些具体需求？</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-left"></div>
+					<div class="talk-bubble tri-right left-top">
+					  <div class="talktext">
+					    <p>具体职位你可以参考职位详情</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-right"></div>
+					<div class="talk-bubble tri-right right-top right-floated">
+					  <div class="talktext">
+					    <p>您好，请问该职位有哪些具体需求？</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+
+					<div class="avata-left"></div>
+					<div class="talk-bubble tri-right left-top">
+					  <div class="talktext">
+					    <p>具体职位你可以参考职位详情</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-right"></div>
+					<div class="talk-bubble tri-right right-top right-floated">
+					  <div class="talktext">
+					    <p>您好，请问该职位有哪些具体需求？</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-left"></div>
+					<div class="talk-bubble tri-right left-top">
+					  <div class="talktext">
+					    <p>具体职位你可以参考职位详情</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-right"></div>
+					<div class="talk-bubble tri-right right-top right-floated">
+					  <div class="talktext">
+					    <p>您好，请问该职位有哪些具体需求？</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+
+					<div class="avata-left"></div>
+					<div class="talk-bubble tri-right left-top">
+					  <div class="talktext">
+					    <p>具体职位你可以参考职位详情</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-right"></div>
+					<div class="talk-bubble tri-right right-top right-floated">
+					  <div class="talktext">
+					    <p>您好，请问该职位有哪些具体需求？</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+
+					<div class="avata-left"></div>
+					<div class="talk-bubble tri-right left-top">
+					  <div class="talktext">
+					    <p>具体职位你可以参考职位详情</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-right"></div>
+					<div class="talk-bubble tri-right right-top right-floated">
+					  <div class="talktext">
+					    <p>好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. 好的，非常感谢。Thank you very much. </p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+					<div class="avata-left"></div>
+					<div class="talk-bubble tri-right left-top">
+					  <div class="talktext">
+					    <p>不客气</p>
+					  </div>
+					</div>
+					<div class="clear"></div>
+
+				</div>
+			  </div>
+
+		      <div class="modal-footer">
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="请输入对话内容" aria-describedby="basic-addon2">
+				  <span class="input-group-addon" id="basic-addon2">发送</span>
+				</div>
+
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
+		<script>
+			$(document).ready(function () {
+
+				/*----创建弹框---*/
+				$('#myModal a, #myModal1 a').click(function (e) {
+					e.preventDefault()
+					$(this).tab('show')
+				})
+				/*----创建弹框---*/
+
+				/*----创建开关按钮---*/
+				$('#switch-c').bootstrapSwitch('isActive');
+				$('#switch-s').bootstrapSwitch('isActive');
+				/*----创建开关按钮---*/
+
+				$("#cmp-input").hide();
+				$("#std-input").hide();
+				$(".cost").show();
+
+				$('#switch-c').on('switch-change', function (e, data) {
+				    $("#cmp-input").toggle();
+				});
+				$('#switch-s').on('switch-change', function (e, data) {
+				    $("#std-input").toggle();
+				    $(".cost").toggle();
+				});
+
+				$('#cmp-input-val').keyup(function () {
+					if ($('#cmp-input-val').val() == "") {
+						$('#cmp-input-err').show();
+					} else {
+						$('#cmp-input-err').hide();
+					}
+				});
+
+				$('#std-input-val').keyup(function () {
+					if ($('#std-input-val').val() == "") {
+						$('#std-input-err').show();
+					} else {
+						$('#std-input-err').hide();
+					}
+				});
+				
+
+				/*----将对话框定位到最新的历史对话位置---*/
+				$("#myModal1").on('shown.bs.modal', function() {
+				    var scroll = $("#myModal1 .modal-body");
+					scroll.scrollTop(scroll.height() + 50);
+				});
+				/*----将对话框定位到最新的历史对话位置---*/
+
+				// cost
+
+			});
+		</script>
+
+  </body>
+</html>
+

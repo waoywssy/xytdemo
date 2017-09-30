@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	
+	<!-- LOAD YOUR CSS FILE WHILE PAYING ATTENTION TO ITS PATH! -->
+	<style>
+	.ui-header {
+		height: 40px;
+	}
+	.ui-title {
+		padding-top: 0;
+	}
+	.left {
+		vertical-align: bottom;
+		float:left; 
+		clear:right;
+	}
+	.form-right {
+		vertical-align: bottom;
+		float:right; 
+		clear:right;
+	}
+	.clear {
+		clear: right;
+	}
+
+	#jobs-nav .ui-header, 
+	#jobs-nav .ui-btn {
+		background-color: #50C1C1;
+		color:#FFF;
+	}
+
+	#jobs-nav .job-title {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+	#jobs-nav .job-company {
+		margin-bottom: 10px;
+	}
+
+	#jobs-nav .job-applied {
+		font-size: 14px;
+		color: #D4D0C8;
+		margin-bottom: 10px;
+	}
+
+	#jobs-nav .job-interviewed {
+		color: #D4D0C8;
+	}
+	#jobs-nav .job-operation {
+		margin-top: 20px;
+		width:60%;
+	}
+	#footer .ui-collapsible-content{
+		padding: 0;
+	}
+
+
+	</style>
+</head>	
+<body>
+
+	<div data-role="page" id="jobs-nav">
+		<div data-role="header" data-position="fixed"><h1>录用的职位</h1>
+			<a href="#nav-panel" data-icon="carat-l" data-iconpos="notext">返回</a>
+		</div><!-- /header -->
+
+		<ul data-role="listview" data-inset="true">
+			<li>
+				<div class="left">
+					<div class="job-title"><span><b>Java 开发工程师</b></span></div>
+					<div class="job-company"><span>IBM中国</span></div>
+					<div class="job-applied"><span>申请日&nbsp;&nbsp;2017-01-04</span></div>
+				</div>
+				<div class="form-right">
+					<div class="job-interviewed"><span>面试&nbsp;&nbsp;2017-08-23</span></div>
+					<!--div class="job-operation form-right"><span><a class="ui-btn" data-icon="check" data-iconpos="notext">接&nbsp;受</a></span></div-->
+				</div>
+			</li>
+
+			<li>
+				<div class="left">
+					<div class="job-title"><span><b>高级Java开发工程师</b></span></div>
+					<div class="job-company"><span>赶集网</span></div>
+					<div class="job-applied"><span>申请日&nbsp;&nbsp;2017-01-04</span></div>
+				</div>
+				<div class="form-right">
+					<div class="job-interviewed"><span>面试&nbsp;&nbsp;2017-08-27</span></div>
+					<!--div class="job-operation form-right"><span><a class="ui-btn" data-icon="check" data-iconpos="notext">接&nbsp;受</a></span></div-->
+				</div>
+			</li>
+
+			<li>
+				<div class="left">
+					<div class="job-title"><span><b>产品经理</b></span></div>
+					<div class="job-company"><span>石牛网络</span></div>
+					<div class="job-applied"><span>申请日&nbsp;&nbsp;2017-01-04</span></div>
+				</div>
+				<div class="form-right">
+					<div class="job-interviewed"><span>面试&nbsp;&nbsp;2017-08-27</span></div>
+					<!--div class="job-operation form-right"><span><a class="ui-btn" data-icon="check" data-iconpos="notext">接&nbsp;受</a></span></div-->
+				</div>
+			</li>
+
+			<li>
+				<div class="left">
+					<div class="job-title"><span><b>大堂经理</b></span></div>
+					<div class="job-company"><span>海底捞</span></div>
+					<div class="job-applied"><span>申请日&nbsp;&nbsp;2017-01-04</span></div>
+				</div>
+				<div class="form-right">
+					<div class="job-interviewed"><span>面试&nbsp;&nbsp;2017-08-25</span></div>
+					<!--div class="job-operation form-right"><span><a class="ui-btn" data-icon="check" data-iconpos="notext">接&nbsp;受</a></span></div-->
+				</div>
+			</li>
+
+			<li>
+				<div class="left">
+					<div class="job-title"><span><b>传单派发员</b></span></div>
+					<div class="job-company"><span>调研网</span></div>
+					<div class="job-applied"><span>申请日&nbsp;&nbsp;2017-01-04</span></div>
+				</div>
+				<div class="form-right">
+					<div class="job-interviewed"><span>面试&nbsp;&nbsp;2017-08-29</span></div>
+					<!--div class="job-operation form-right"><span><a class="ui-btn" data-icon="check" data-iconpos="notext">接&nbsp;受</a></span></div-->
+				</div>
+			</li>
+		</ul>
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="true" id="footer">
+			<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+			    <h4 id="tag">职位</h4>
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#" data-icon="comment">已面试</a></li>
+		                <li><a href="#" data-icon="phone">待定</a></li>
+		                <li><a href="#" data-icon="heart">已接受</a></li>
+		            </ul>
+		            <ul>
+		            	<li><a href="#" data-icon="power">已拒绝</a></li>
+		                <li><a href="#" data-icon="star">已滤过</a></li>
+		                <li><a href="#" data-icon="minus">已失败</a></li>
+		            </ul>
+		        </div>
+			</div>
+	    </div>
+
+	</div>
+	<script>
+		$(function() {
+			var tag = $("#tag").siblings().get(0);
+			$(tag).html(tag.innerHTML.replace("&nbsp;&nbsp;&nbsp;&nbsp;", ""));
+		    console.log(tag);
+		});
+		
+	</script>
+</body>
+</html>

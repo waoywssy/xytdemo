@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<!-- LOAD YOUR CSS FILE WHILE PAYING ATTENTION TO ITS PATH! -->
+	<style>
+	div.stu-profile{
+		font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	}
+	.ui-header {
+		height: 40px;
+	}
+	.ui-title {
+		padding-top: 0;
+	}
+	.form-right {
+		vertical-align: bottom;
+		float:right; 
+		clear:right;
+	}
+	.avatar {
+		float:left;
+		margin-right: 20px;
+	}
+	.profile-name {
+		font-size: 14px;
+		margin-top: 10px;	
+		margin-bottom: 20px;	
+	}
+	.longtext {
+		text-overflow:ellipsis
+	}
+	#resume-basic,
+	#resume-basic a {
+		background-color: #50C1C1;
+		color: #FFF;
+		margin-bottom: 10px;
+		border-radius: 0;
+	}
+	#resume-number table {
+		width: 100%;
+	}
+	table td {
+		text-align:center; 
+    	vertical-align:middle;
+    	border-right: 1px #CCC dashed;
+	}
+	.secondary-number td {
+		text-align:left; 
+    	vertical-align:middle;
+    	padding-left: 10px;
+	}
+	.profile-number-item td{
+	}
+
+	.profile-number td {
+		font-size: 24px;
+	}
+	.secondary-number td {
+		font-size: 12px;
+		padding-right: 5px;
+		padding-top: 10px;
+		height: 120%;
+	}
+	#resume-number .lastcell {
+		border-right: none;
+	}
+	#basic-profile {
+		margin-bottom: 10px;
+	}
+	.secondary-title{
+		color: #BBB;
+	}
+	.profile-name a {
+
+	}
+
+
+	</style>
+</head>	
+<body>
+	<div data-role="page" class="stu-profile">
+		<!--div data-role="header"><h1>个人信息</h1>
+			<a href="#nav-panel" data-icon="arrow-l" data-iconpos="notext">上一步</a>
+			<a href="#add-form" data-icon="edit" data-iconpos="notext">修改</a>
+		</div--><!-- /header -->
+
+		<ul data-role="listview" data-inset="true" class="basic-profile" id="basic-profile">
+        <li id="resume-basic">
+        	<span>
+        		<img class="avatar" src="img/default.svg" /><span class="form-right">
+					<div class="form-left profile-name"><a href="#">修改</a></div>
+				</span>
+        		<div class="profile-name">
+        			<span>诸葛孔明</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>女</span>&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>170 cm</span>
+        		</div>
+        		<div class="profile-name">
+        			<span>湖南省 - 长沙市</span><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>汉族</span>
+        		</div>
+            </span>
+        </li>
+        <li id="resume-number">
+        	<table>
+				<tbody>
+					<tr class="profile-number">
+						<td>3</td>
+						<td>6</td>
+						<td class="lastcell">9</td>
+					</tr>
+					<tr class="profile-number-item">
+						<td>待沟通</td>
+						<td>已投递</td>
+						<td class="lastcell">待面试</td>
+					</tr>
+
+					<tr class="secondary-number">
+						<td><span class="secondary-title">总应聘</span><span class="form-right">7</span></td>
+						<td><span class="secondary-title">投简历</span><span class="form-right">20</span></td>
+						<td  class="lastcell"><span class="secondary-title">今日面试</span><span class="form-right">3</span></td>
+					</tr>
+					<tr class="secondary-number">
+						<td><span class="secondary-title">已面试</span><span class="form-right">7</span></td>
+						<td><span class="secondary-title">被拒绝</span><span class="form-right">20</span></td>
+						<td class="lastcell"><span class="secondary-title">被录用</span><span class="form-right">3</span></td>
+					</tr>
+				</tbody>
+			</table>
+		</li>
+    	</ul>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        <ul data-role="listview" data-inset="true">
+		<li id="no"><span class="div-text">学号</span><span class="form-right">
+				123456
+			</span>
+		</li>
+		<li>身份证<span class="form-right">410102************</span>
+		</li>
+		<li>院系<span class="form-right">
+			<div class="form-left longtext">信息技术学院 | 计算机系</div>
+			</span>
+		</li>
+		<li>班级<span class="form-right">
+			<div class="form-left longtext">电子专业 | 121班</div>
+			</span>
+		</li>
+		<li>入校日期<span class="form-right">2010-09-01</span></li>
+		<li>出生日期<span class="form-right">1990-01-01</span></li>
+		<li>联系电话<span class="form-right">1357481****</span></li>
+		<li>是否在职<span class="form-right">是</span></li>
+	</ul>
+</div>
+	<script>
+		$(document).ready(function () {
+
+		});
+	</script>
+</body>
+</html>
